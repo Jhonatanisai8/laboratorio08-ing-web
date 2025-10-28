@@ -14,7 +14,7 @@
                     <a class="nav-link" href="?controller=material&action=index">Materiales</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Clientes</a>
+                    <a class="nav-link" href="?controller=cliente&action=index">Clientes</a>
                 </li>
             </ul>
         </div>
