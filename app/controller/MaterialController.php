@@ -14,7 +14,7 @@ class MaterialController extends Controller
     public function index()
     {
         $materiales = $this->materialModel->getAll();
-        $this->view('index', ['materiales' => $materiales]);
+        $this->view('materiales/index', ['materiales' => $materiales]);
     }
 
     public function create()
@@ -23,7 +23,7 @@ class MaterialController extends Controller
             $this->materialModel->create($_POST);
             header('Location: /?controller=material&action=index');
         } else {
-            $this->view('create');
+            $this->view('materiales/create');
         }
     }
 
@@ -35,13 +35,13 @@ class MaterialController extends Controller
             header('Location: /?controller=material&action=index');
         } else {
             $user = $this->materialModel->getById($id);
-            $this->view('edit', ['user' => $user]);
+            $this->view('materiales/edit', ['user' => $user]);
         }
     }
 
     public function delete()
     {
-        $id = $_GET['id'];
+        $id = $_GET['codigo'];
         $this->materialModel->delete($id);
         header('Location: /?controller=material&action=index');
     }
